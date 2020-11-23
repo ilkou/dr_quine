@@ -3,11 +3,11 @@ const { exec } = require('child_process');
 
 let i = 5;
 
-i = fs.existsSync('./Sully_5.js') ? i : 6;
+i = fs.existsSync('./Sully_' + i.toString() + '.js') ? i : i + 1;
 
 (function Sully() {
 	if (i > 0) {
-		let data = "const fs = require('fs');\nconst { exec } = require('child_process');\n\nlet i = " + (i - 1).toString() + ";\n\ni = fs.existsSync('./Sully_5.js') ? i : 6;\n\n(" + Sully.toString() + ")()\n";
+		let data = "const fs = require('fs');\nconst { exec } = require('child_process');\n\nlet i = " + (i - 1).toString() + ";\n\ni = fs.existsSync('./Sully_' + i.toString() + '.js') ? i : i + 1;\n\n(" + Sully.toString() + ")()\n";
 		fs.writeFile("Sully_" + (i - 1).toString() + ".js", data, (err) => {});
 		fs.writeFile("Sully_" + (i - 1).toString(), "#!/usr/bin/env node\n" + data, (err) => {});
 		exec("chmod +x Sully_" + (i - 1).toString(), (err, stdout, stderr) => {});
