@@ -12,21 +12,23 @@ string l[] = {
 "",
 "int main() {",
 "	int i = ",
-"	ifstream f(",
-"./Sully_5.cpp",
-"); i = f.good() ? i : 6;",
-"	string strc = ",
+"	if (i > 0) {",
+"		ifstream f(",
+"./Sully_",
+" + to_string(i) + ",
+".cpp",
+"); i = f.good() ? i : i + 1;",
+"		string i_1 = to_string(i - 1);",
+"		string strc = ",
 "./Sully_",
 " + i_1 + ",
 ".cpp",
 ";",
-"	if (i > 0)",
-"	{",
 "		ofstream mfile;",
 "		mfile.open(strc);",
 "		mfile << l[0] << n << l[1] << n << l[2] << n << l[3] << n << l[4] << n;",
-"		for (i = 0; i <= 39; i++) mfile << q + l[i] + q + ',' + n;",
-"		mfile << l[5] << n << l[6] << n << l[7] << n << l[8] << i_1 << ';' << n << l[9] + q + l[10] + q << l[11] << n << l[39] << n << l[12] + q + l[13] + q + l[14] + q + l[15] + q + l[16] << n << l[17] << n << l[18] << n << l[19] << n << l[20] << n << l[21] << n << l[22] << n << l[23] << n << l[24] << n << l[25] << n << l[26] + q + l[27] + q + l[28] + q + l[29] + q + l[30] << n << l[31] << n << l[32] + q + l[33] + q + l[34] << n << l[35] << n << l[36] << n << l[37] << n << l[38] << n;",
+"		for (i = 0; i <= 40; i++) mfile << q + l[i] + q + ',' + n;",
+"		mfile << l[5] << n << l[6] << n << l[7] << n << l[8] << i_1 << ';' << n << l[9] << n << l[10] + q + l[11] + q << l[12] << q + l[13] + q << l[14] << n << l[15] << n << l[16] + q + l[17] + q + l[18] + q + l[19] + q + l[20] << n << l[21] << n << l[22] << n << l[23] << n << l[24] << n << l[25] << n << l[26] << n << l[27] << n << l[28] + q + l[29] + q + l[30] + q + l[31] + q + l[32] << n << l[33] << n << l[34] + q + l[35] + q + l[36] << n << l[37] << n << l[38] << n << l[39] << n << l[40] << n;",
 "		mfile.close();",
 "		string str;",
 "		str = ",
@@ -42,21 +44,19 @@ string l[] = {
 "	}",
 "	return (0);",
 "}",
-"	string i_1 = to_string(i - 1);",
 };
 
 int main() {
-	int i = 5;
-	ifstream f("./Sully_5.cpp"); i = f.good() ? i : 6;
-	string i_1 = to_string(i - 1);
-	string strc = "./Sully_" + i_1 + ".cpp";
-	if (i > 0)
-	{
+	int i = 6;
+	if (i > 0) {
+		ifstream f("./Sully_" + to_string(i) + ".cpp"); i = f.good() ? i : i + 1;
+		string i_1 = to_string(i - 1);
+		string strc = "./Sully_" + i_1 + ".cpp";
 		ofstream mfile;
 		mfile.open(strc);
 		mfile << l[0] << n << l[1] << n << l[2] << n << l[3] << n << l[4] << n;
-		for (i = 0; i <= 39; i++) mfile << q + l[i] + q + ',' + n;
-		mfile << l[5] << n << l[6] << n << l[7] << n << l[8] << i_1 << ';' << n << l[9] + q + l[10] + q << l[11] << n << l[39] << n << l[12] + q + l[13] + q + l[14] + q + l[15] + q + l[16] << n << l[17] << n << l[18] << n << l[19] << n << l[20] << n << l[21] << n << l[22] << n << l[23] << n << l[24] << n << l[25] << n << l[26] + q + l[27] + q + l[28] + q + l[29] + q + l[30] << n << l[31] << n << l[32] + q + l[33] + q + l[34] << n << l[35] << n << l[36] << n << l[37] << n << l[38] << n;
+		for (i = 0; i <= 40; i++) mfile << q + l[i] + q + ',' + n;
+		mfile << l[5] << n << l[6] << n << l[7] << n << l[8] << i_1 << ';' << n << l[9] << n << l[10] + q + l[11] + q << l[12] << q + l[13] + q << l[14] << n << l[15] << n << l[16] + q + l[17] + q + l[18] + q + l[19] + q + l[20] << n << l[21] << n << l[22] << n << l[23] << n << l[24] << n << l[25] << n << l[26] << n << l[27] << n << l[28] + q + l[29] + q + l[30] + q + l[31] + q + l[32] << n << l[33] << n << l[34] + q + l[35] + q + l[36] << n << l[37] << n << l[38] << n << l[39] << n << l[40] << n;
 		mfile.close();
 		string str;
 		str = "g++ -Wall -Wextra -Werror " + strc + " -o Sully_" + i_1;
